@@ -42,7 +42,7 @@ To install all dependencies, run:
 ```bash
 pip install -r requirements.txt
 
-_____________________________
+
 
 **Setup**
 
@@ -55,9 +55,9 @@ _____________________________
 
 3. Download the required datasets:
 
- 	o	Visual Taxonomy Dataset: Available on Kaggle.
+o	Visual Taxonomy Dataset: Available on Kaggle.
 
-	o	MobileNetV2 Weights: Download from google or from my repository.
+o	MobileNetV2 Weights: Download from google or from my repository.
 
 
 4. Place the datasets and weights in the following structure:
@@ -80,95 +80,89 @@ _____________________________
 	
 	└── visual_taxonomy_pipeline.py
 
-________________________________________
 
 **Dataset**
 
 This project uses the Visual Taxonomy Dataset, which includes:
 
-	•	Train and test images
+o	Train and test images
+
+o	Attribute information for categories in train.csv and category_attributes.parquet.
  
-	•	Attribute information for categories in train.csv and category_attributes.parquet.
- 
-________________________________________
 
 **Usage**
 
 1.	Run the Pipeline:
 
-	Execute the Python script to preprocess data, extract features, train the model, and generate predictions:
+Execute the Python script to preprocess data, extract features, train the model, and generate  predictions:
 
 	python visual_taxonomy_pipeline.py
 
 
 2.	Verify Output:
    
-	o	Feature extraction and model training logs will appear in the console.
+o	Feature extraction and model training logs will appear in the console.
 
-	o	Submission file is generated at: submission.csv.
+o	Submission file is generated at: submission.csv.
 
 3. 	Notes on Model Weights:
 
-	The pre-trained MobileNetV2 weights (mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_128_no_top.h5) must be 	downloaded separately and placed in the appropriate directory (/data/).
-________________________________________
+The pre-trained MobileNetV2 weights (mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_128_no_top.h5) must be downloaded separately and placed in the appropriate directory (/data/).
+
 
 **Model Training and Evaluation**
 
-•	Feature Extraction : We use a pre-trained MobileNetV2 model (with the top layers removed) to extract feature 		vectors from the images. These features are then used for classification.
+o	Feature Extraction : We use a pre-trained MobileNetV2 model (with the top layers removed) 
+to extract feature vectors from the images. These features are then used for classification.
+o	Classification: A MultiOutputClassifier with a Random Forest base model is trained on the extracted features. This allows the model to predict multiple attributes for each image.
 
-•	Classification: A MultiOutputClassifier with a Random Forest base model is trained on the extracted features. This 	allows the model to predict multiple attributes for each image.
-
-•	Evaluation Metrics :Accuracy and F1-Score (both Micro and Macro) are computed on the validation data to evaluate 	model performance.
-
-________________________________________
+o	Evaluation Metrics :Accuracy and F1-Score (both Micro and Macro) are computed on the validation data to evaluate model performance.
 
 **Inference**
 
-Once the model is trained, the following steps are used to generate predictions for the test dataset:
+1.	Once the model is trained, the following steps are used to generate predictions for the test dataset:
 
-1. Feature Extraction: The test images are processed using the same feature extraction pipeline.
+2.	Feature Extraction: The test images are processed using the same feature extraction pipeline.
 
-2.Prediction: The trained Random Forest classifier predicts the attributes for each product.
+3.	Prediction: The trained Random Forest classifier predicts the attributes for each product.
 
-3. Submission Formatting: The predictions are formatted into a submission.csv file, as required by the Kaggle competition.
+4.	Submission Formatting: The predictions are formatted into a submission.csv file, as required by the Kaggle competition.
 To run the inference script, use:
 
-python inference.py
+Python inference.py
 
 This will:
 
-	o Load the pre-trained model and the test data.
+•	Load the pre-trained model and the test data.
 
-	o Process the test images.
+•	Process the test images.
 
-	o Predict the attributes for each product.
+•	Predict the attributes for each product.
 
-	o Format the predictions into a Kaggle-compatible CSV file (submission.csv).
+•	Format the predictions into a Kaggle-compatible CSV file (submission.csv).
 
-________________________________________
+
 
 **Submission**
 
 The generated submission file is formatted according to the competition requirements:
 
-	•	Each product in the test set has the correct number of attributes predicted.
+•	Each product in the test set has the correct number of attributes predicted.
 
-	•	Missing attributes are filled with the default value (dummy_value).
+•	Missing attributes are filled with the default value (dummy_value).
 
 The final submission file (submission.csv) will be saved in the current directory.
 
 
-________________________________________
-
 **Acknowledgments**
 
-	•	Kaggle for hosting the competition and providing the datasets.
+•	Kaggle for hosting the competition and providing the datasets.
 
-	•	TensorFlow for enabling deep learning workflows.
+•	TensorFlow for enabling deep learning workflows.
 
-	•	MobileNetV2 for providing pre-trained weights used in feature extraction.
+•	MobileNetV2 for providing pre-trained weights used in feature extraction.
 
-	•	scikit-learn for supporting multi-output classification.
+•	scikit-learn for supporting multi-output classification.
 
 Feel free to reach out via GitHub Issues for any questions or feedback.
 
