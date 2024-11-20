@@ -85,25 +85,26 @@ pip install -r requirements.txt
 
 This project uses the Visual Taxonomy Dataset, which includes:
 
-	o Train and test images
+-Train and test images
 	
-	o Attribute information for categories in train.csv and category_attributes.parquet.
+ - Attribute information for categories in train.csv and category_attributes.parquet.
  
 
 **Usage**
 
 1. Run the Pipeline:
-	 ```bash
+
 	Execute the Python script to preprocess data, extract features, train the model, and generate  predictions:
 
+  	```bash
 	python visual_taxonomy_pipeline.py
 
 
 2. Verify Output:
-    ```bash
-	o Feature extraction and model training logs will appear in the console.
+    
+    -Feature extraction and model training logs will appear in the console.
 	
-	o Submission file is generated at: submission.csv.
+    -Submission file is generated at: submission.csv.
 
 3. 	Notes on Model Weights:
 
@@ -112,12 +113,12 @@ This project uses the Visual Taxonomy Dataset, which includes:
 
 **Model Training and Evaluation**
 
-	o Feature Extraction : We use a pre-trained MobileNetV2 model (with the top layers removed)
-	  to extract feature vectors from the images. These features are then used for classification.
+1. Feature Extraction : We use a pre-trained MobileNetV2 model (with the top layers removed)
+to extract feature vectors from the images. These features are then used for classification.
 	
-	o Classification: A MultiOutputClassifier with a Random Forest base model is trained on the extracted features.This 	allows  the model to predict multiple attributes for each image.
+2. Classification: A MultiOutputClassifier with a Random Forest base model is trained on the extracted features.This 	allows  the model to predict multiple attributes for each image.
 
-	o Evaluation Metrics :Accuracy and F1-Score (both Micro and Macro) are computed on the validation data to evaluate 	model performance.
+3. Evaluation Metrics :Accuracy and F1-Score (both Micro and Macro) are computed on the validation data to evaluate 	model performance.
 
 **Inference**
 
@@ -134,13 +135,13 @@ Python inference.py
 
 This will:
 
-	• Load the pre-trained model and the test data.
+-Load the pre-trained model and the test data.
 	
-	• Process the test images.
+- Process the test images.
 	
-	• Predict the attributes for each product.
+-Predict the attributes for each product.
 	
-	• Format the predictions into a Kaggle-compatible CSV file (submission.csv).
+-Format the predictions into a Kaggle-compatible CSV file (submission.csv).
 	
 
 
@@ -157,15 +158,15 @@ The final submission file (submission.csv) will be saved in the current director
 
 **Acknowledgments**
 
-	• Kaggle for hosting the competition and providing the datasets.
+ 1. Kaggle for hosting the competition and providing the datasets.
 	
-	• TensorFlow for enabling deep learning workflows.
+2. TensorFlow for enabling deep learning workflows.
 	
-	• MobileNetV2 for providing pre-trained weights used in feature extraction.
+3. MobileNetV2 for providing pre-trained weights used in feature extraction.
 	
-	• scikit-learn for supporting multi-output classification.
+ 4. scikit-learn for supporting multi-output classification.
 
 Feel free to reach out via GitHub Issues for any questions or feedback.
- ```bash
+
 
 
