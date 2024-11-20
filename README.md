@@ -73,7 +73,7 @@ _____________________________
 
 3. Download the required datasets:
 
- 	o	Visual Taxonomy Dataset: Available on Kaggle (link).
+ 	o	Visual Taxonomy Dataset: Available on Kaggle.
 
 	o	MobileNetV2 Weights: Download from MobileNetV2 Weights on Kaggle or from my repository.
 
