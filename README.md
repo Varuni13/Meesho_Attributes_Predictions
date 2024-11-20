@@ -1,16 +1,28 @@
 Visual Taxonomy Classification and Submission Pipeline
+
 This repository contains a pipeline for solving the Visual Taxonomy Classification problem, involving attribute prediction for images based on their category. The project leverages MobileNetV2 for feature extraction and a Random Forest Classifier for attribute prediction.
+
 Table of Contents
+
 1.	Features
+   
 2.	Requirements
+   
 3.	Setup
+   
 4.	Dataset
+   
 5.	Usage
+
 6.	Model Training and Evaluation
+	
 7.	Submission
+	
 8.	Acknowledgments
 ________________________________________
+
 Features
+
 •	Custom Data Generator: Handles large-scale image datasets efficiently.
 •	Feature Extraction: Uses pre-trained MobileNetV2 for extracting image features.
 •	Multi-Label Classification: Predicts multiple attributes for each image.
