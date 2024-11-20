@@ -54,10 +54,10 @@ pip install -r requirements.txt
 
 
 3. Download the required datasets:
-
-o	Visual Taxonomy Dataset: Available on Kaggle.
-
-o	MobileNetV2 Weights: Download from google or from my repository.
+	 ```bash
+	o	Visual Taxonomy Dataset: Available on Kaggle.
+	
+	o	MobileNetV2 Weights: Download from google or from my repository.
 
 
 4. Place the datasets and weights in the following structure:
@@ -93,14 +93,14 @@ This project uses the Visual Taxonomy Dataset, which includes:
 **Usage**
 
 1. Run the Pipeline:
-
+	 ```bash
 	Execute the Python script to preprocess data, extract features, train the model, and generate  predictions:
 
 	python visual_taxonomy_pipeline.py
 
 
 2. Verify Output:
-   
+    ```bash
 	o Feature extraction and model training logs will appear in the console.
 	
 	o Submission file is generated at: submission.csv.
@@ -112,13 +112,12 @@ This project uses the Visual Taxonomy Dataset, which includes:
 
 **Model Training and Evaluation**
 
-o Feature Extraction : We use a pre-trained MobileNetV2 model (with the top layers removed)
-  to extract feature vectors from the images. These features are then used for classification.
+	o Feature Extraction : We use a pre-trained MobileNetV2 model (with the top layers removed)
+	  to extract feature vectors from the images. These features are then used for classification.
+	
+	o Classification: A MultiOutputClassifier with a Random Forest base model is trained on the extracted features.This 	allows  the model to predict multiple attributes for each image.
 
-o Classification: A MultiOutputClassifier with a Random Forest base model is trained on the extracted features. This allows 
-   the model to predict multiple attributes for each image.
-
-o Evaluation Metrics :Accuracy and F1-Score (both Micro and Macro) are computed on the validation data to evaluate model performance.
+	o Evaluation Metrics :Accuracy and F1-Score (both Micro and Macro) are computed on the validation data to evaluate 	model performance.
 
 **Inference**
 
@@ -167,5 +166,6 @@ The final submission file (submission.csv) will be saved in the current director
 	• scikit-learn for supporting multi-output classification.
 
 Feel free to reach out via GitHub Issues for any questions or feedback.
+ ```bash
 
 
