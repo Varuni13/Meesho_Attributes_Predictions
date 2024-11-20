@@ -44,7 +44,7 @@ pip install -r requirements.txt
 
 
 
-**Setup**
+### Setup
 
 1.	Clone the repository:
    
@@ -81,7 +81,7 @@ pip install -r requirements.txt
 	└── visual_taxonomy_pipeline.py
 
 
-**Dataset**
+## Dataset
 
 This project uses the Visual Taxonomy Dataset, which includes:
 
@@ -90,7 +90,7 @@ This project uses the Visual Taxonomy Dataset, which includes:
 - Attribute information for categories in train.csv and category_attributes.parquet.
 
 
-**Usage**
+## Usage
 
 1. Run the Pipeline:
 
@@ -108,10 +108,10 @@ This project uses the Visual Taxonomy Dataset, which includes:
 
 3. Notes on Model Weights:
 
-The pre-trained MobileNetV2 weights (mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_128_no_top.h5) must be 	downloaded separately and placed in the appropriate directory (/data/).
+   The pre-trained MobileNetV2 weights (mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_128_no_top.h5) must be downloaded separately and placed in the appropriate directory (/data/).
 
 
-**Model Training and Evaluation**
+## Model Training and Evaluation
 
 1. Feature Extraction : We use a pre-trained MobileNetV2 model (with the top layers removed)
 to extract feature vectors from the images. These features are then used for classification.
@@ -120,7 +120,7 @@ to extract feature vectors from the images. These features are then used for cla
 
 3. Evaluation Metrics :Accuracy and F1-Score (both Micro and Macro) are computed on the validation data to evaluate 	model performance.
 
-**Inference**
+##Inference
 
 1. Once the model is trained, the following steps are used to generate predictions for the test dataset:
 	
@@ -131,8 +131,8 @@ to extract feature vectors from the images. These features are then used for cla
 4. Submission Formatting: The predictions are formatted into a submission.csv file, as required by the Kaggle competition.
 
 To run the inference script, use:
-
-Python inference.py
+	```bash 
+          Python inference.py
 
 This will:
 
@@ -144,9 +144,7 @@ This will:
 	
 - Format the predictions into a Kaggle-compatible CSV file (submission.csv).
 
-
-
-**Submission**
+## Submission
 
 The generated submission file is formatted according to the competition requirements:
 
@@ -157,7 +155,7 @@ The generated submission file is formatted according to the competition requirem
 The final submission file (submission.csv) will be saved in the current directory.
 
 
-**Acknowledgments**
+### Acknowledgments
 
  1. Kaggle for hosting the competition and providing the datasets.
 	
