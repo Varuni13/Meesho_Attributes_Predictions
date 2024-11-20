@@ -54,10 +54,10 @@ pip install -r requirements.txt
 
 
 3. Download the required datasets:
-	 ```bash
-	o	Visual Taxonomy Dataset: Available on Kaggle.
+   
+- Visual Taxonomy Dataset: Available on Kaggle.
 	
-	o	MobileNetV2 Weights: Download from google or from my repository.
+- MobileNetV2 Weights: Download from google or from my repository.
 
 
 4. Place the datasets and weights in the following structure:
@@ -85,30 +85,30 @@ pip install -r requirements.txt
 
 This project uses the Visual Taxonomy Dataset, which includes:
 
--Train and test images
-	
- - Attribute information for categories in train.csv and category_attributes.parquet.
+- Train and test images
+
+- Attribute information for categories in train.csv and category_attributes.parquet.
  
 
 **Usage**
 
 1. Run the Pipeline:
 
-	Execute the Python script to preprocess data, extract features, train the model, and generate  predictions:
+   Execute the Python script to preprocess data, extract features, train the model, and generate  predictions:
 
-  	```bash
+ 	```bash
 	python visual_taxonomy_pipeline.py
 
 
 2. Verify Output:
     
-    -Feature extraction and model training logs will appear in the console.
+    - Feature extraction and model training logs will appear in the console.
 	
-    -Submission file is generated at: submission.csv.
+    - Submission file is generated at: submission.csv.
 
-3. 	Notes on Model Weights:
+3. Notes on Model Weights:
 
-	The pre-trained MobileNetV2 weights (mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_128_no_top.h5) must be 	downloaded separately and placed in the appropriate directory (/data/).
+The pre-trained MobileNetV2 weights (mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_128_no_top.h5) must be 	downloaded separately and placed in the appropriate directory (/data/).
 
 
 **Model Training and Evaluation**
@@ -122,26 +122,27 @@ to extract feature vectors from the images. These features are then used for cla
 
 **Inference**
 
-	1.Once the model is trained, the following steps are used to generate predictions for the test dataset:
+1. Once the model is trained, the following steps are used to generate predictions for the test dataset:
 	
-	2.Feature Extraction: The test images are processed using the same feature extraction pipeline.
+ 2.Feature Extraction: The test images are processed using the same feature extraction pipeline.
 	
-	3.Prediction: The trained Random Forest classifier predicts the attributes for each product.
+ 3. Prediction: The trained Random Forest classifier predicts the attributes for each product.
 	
-	4.Submission Formatting: The predictions are formatted into a submission.csv file, as required by the Kaggle competition.
-	To run the inference script, use:
+4. Submission Formatting: The predictions are formatted into a submission.csv file, as required by the Kaggle competition.
+
+To run the inference script, use:
 
 Python inference.py
 
 This will:
 
--Load the pre-trained model and the test data.
-	
+- Load the pre-trained model and the test data.
+
 - Process the test images.
 	
--Predict the attributes for each product.
+- Predict the attributes for each product.
 	
--Format the predictions into a Kaggle-compatible CSV file (submission.csv).
+- Format the predictions into a Kaggle-compatible CSV file (submission.csv).
 	
 
 
@@ -149,9 +150,9 @@ This will:
 
 The generated submission file is formatted according to the competition requirements:
 
-	• Each product in the test set has the correct number of attributes predicted.
+- Each product in the test set has the correct number of attributes predicted.
 	
-	• Missing attributes are filled with the default value (dummy_value).
+- Missing attributes are filled with the default value (dummy_value).
 
 The final submission file (submission.csv) will be saved in the current directory.
 
@@ -160,9 +161,9 @@ The final submission file (submission.csv) will be saved in the current director
 
  1. Kaggle for hosting the competition and providing the datasets.
 	
-2. TensorFlow for enabling deep learning workflows.
+ 2. TensorFlow for enabling deep learning workflows.
 	
-3. MobileNetV2 for providing pre-trained weights used in feature extraction.
+ 3. MobileNetV2 for providing pre-trained weights used in feature extraction.
 	
  4. scikit-learn for supporting multi-output classification.
 
