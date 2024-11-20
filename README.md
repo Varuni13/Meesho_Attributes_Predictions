@@ -55,9 +55,9 @@ pip install -r requirements.txt
 
 3. Download the required datasets:
    
-	- Visual Taxonomy Dataset: Available on Kaggle.
-		
-	- MobileNetV2 Weights: Download from google or from my repository.
+- Visual Taxonomy Dataset: Available on Kaggle.
+	
+- MobileNetV2 Weights: Download from google or from my repository.
 
 
 4. Place the datasets and weights in the following structure:
@@ -85,10 +85,10 @@ pip install -r requirements.txt
 
 This project uses the Visual Taxonomy Dataset, which includes:
 
-	- Train and test images
-	
-	- Attribute information for categories in train.csv and category_attributes.parquet.
- 
+- Train and test images
+
+- Attribute information for categories in train.csv and category_attributes.parquet.
+
 
 **Usage**
 
@@ -136,23 +136,23 @@ Python inference.py
 
 This will:
 
-	- Load the pre-trained model and the test data.
+- Load the pre-trained model and the test data.
+
+- Process the test images.
 	
-	- Process the test images.
-		
-	- Predict the attributes for each product.
-		
-	- Format the predictions into a Kaggle-compatible CSV file (submission.csv).
+- Predict the attributes for each product.
 	
+- Format the predictions into a Kaggle-compatible CSV file (submission.csv).
+
 
 
 **Submission**
 
 The generated submission file is formatted according to the competition requirements:
 
-	- Each product in the test set has the correct number of attributes predicted.
-		
-	- Missing attributes are filled with the default value (dummy_value).
+- Each product in the test set has the correct number of attributes predicted.
+	
+- Missing attributes are filled with the default value (dummy_value).
 
 The final submission file (submission.csv) will be saved in the current directory.
 
