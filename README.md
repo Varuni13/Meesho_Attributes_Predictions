@@ -55,9 +55,9 @@ pip install -r requirements.txt
 
 3. Download the required datasets:
    
-- Visual Taxonomy Dataset: Available on Kaggle.
-	
-- MobileNetV2 Weights: Download from google or from my repository.
+	- Visual Taxonomy Dataset: Available on Kaggle.
+		
+	- MobileNetV2 Weights: Download from google or from my repository.
 
 
 4. Place the datasets and weights in the following structure:
@@ -85,9 +85,9 @@ pip install -r requirements.txt
 
 This project uses the Visual Taxonomy Dataset, which includes:
 
-- Train and test images
-
-- Attribute information for categories in train.csv and category_attributes.parquet.
+	- Train and test images
+	
+	- Attribute information for categories in train.csv and category_attributes.parquet.
  
 
 **Usage**
@@ -124,9 +124,9 @@ to extract feature vectors from the images. These features are then used for cla
 
 1. Once the model is trained, the following steps are used to generate predictions for the test dataset:
 	
- 2.Feature Extraction: The test images are processed using the same feature extraction pipeline.
+2. Feature Extraction: The test images are processed using the same feature extraction pipeline.
 	
- 3. Prediction: The trained Random Forest classifier predicts the attributes for each product.
+3. Prediction: The trained Random Forest classifier predicts the attributes for each product.
 	
 4. Submission Formatting: The predictions are formatted into a submission.csv file, as required by the Kaggle competition.
 
@@ -136,13 +136,13 @@ Python inference.py
 
 This will:
 
-- Load the pre-trained model and the test data.
-
-- Process the test images.
+	- Load the pre-trained model and the test data.
 	
-- Predict the attributes for each product.
-	
-- Format the predictions into a Kaggle-compatible CSV file (submission.csv).
+	- Process the test images.
+		
+	- Predict the attributes for each product.
+		
+	- Format the predictions into a Kaggle-compatible CSV file (submission.csv).
 	
 
 
@@ -150,9 +150,9 @@ This will:
 
 The generated submission file is formatted according to the competition requirements:
 
-- Each product in the test set has the correct number of attributes predicted.
-	
-- Missing attributes are filled with the default value (dummy_value).
+	- Each product in the test set has the correct number of attributes predicted.
+		
+	- Missing attributes are filled with the default value (dummy_value).
 
 The final submission file (submission.csv) will be saved in the current directory.
 
