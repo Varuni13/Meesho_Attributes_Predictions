@@ -1,8 +1,8 @@
-#**Visual Taxonomy Classification and Submission Pipeline**`
+# Visual Taxonomy Classification and Submission Pipeline
 
 This repository contains a pipeline for solving the Visual Taxonomy Classification problem, involving attribute prediction for images based on their category. The project leverages MobileNetV2 for feature extraction and a Random Forest Classifier for attribute prediction.
 
-##**Table of Contents**
+## Table of Contents
 
 1.	Features
    
@@ -59,7 +59,9 @@ Make sure you have the following installed:
  
 You can install the required libraries using:
 
-pip install tensorflow scikit-learn pandas numpy matplotlib pillow kagglehub________________________________________
+pip install tensorflow scikit-learn pandas numpy matplotlib pillow kagglehub
+
+_____________________________
 
 **Setup**
 
@@ -70,29 +72,30 @@ pip install tensorflow scikit-learn pandas numpy matplotlib pillow kagglehub____
 	cd visual-taxonomy-pipeline
 
 3. Download the required datasets:
-	o	Visual Taxonomy Dataset: Available on Kaggle (link).
+
+ 	o	Visual Taxonomy Dataset: Available on Kaggle (link).
 
 	o	MobileNetV2 Weights: Download from MobileNetV2 Weights on Kaggle or from my repository.
 
 4. Place the datasets and weights in the following structure:
    
-visual-taxonomy-pipeline/
+	visual-taxonomy-pipeline/
 
-├── data/
-
-│   ├── train_images/
-
-│   ├── test_images/
-
-│   ├── train.csv
-
-│   ├── test.csv
-
-│   ├── category_attributes.parquet
-
-│   └── mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_128_no_top.h5
-
-└── visual_taxonomy_pipeline.py
+	├── data/
+	
+	│   ├── train_images/
+	
+	│   ├── test_images/
+	
+	│   ├── train.csv
+	
+	│   ├── test.csv
+	
+	│   ├── category_attributes.parquet
+	
+	│   └── mobilenet_v2_weights_tf_dim_ordering_tf_kernels_1.0_128_no_top.h5
+	
+	└── visual_taxonomy_pipeline.py
 
 ________________________________________
 
@@ -113,6 +116,7 @@ ________________________________________
 	python visual_taxonomy_pipeline.py
 
 2.	Verify Output:
+   
 	o	Feature extraction and model training logs will appear in the console.
 
 	o	Submission file is generated at: submission.csv.
@@ -120,6 +124,7 @@ ________________________________________
 ________________________________________
 
 **Model Training and Evaluation**
+
 •	Feature Extraction:Uses pre-trained MobileNetV2 to extract feature vectors for images.
 
 •	Classification:A MultiOutputClassifier with a Random Forest base model is trained on the extracted features.
