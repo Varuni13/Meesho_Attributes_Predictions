@@ -131,7 +131,7 @@ to extract feature vectors from the images. These features are then used for cla
 4. Submission Formatting: The predictions are formatted into a submission.csv file, as required by the Kaggle competition.
 
 To run the inference script, use:
-	```bash 
+	
           Python inference.py
 
 This will:
