@@ -120,7 +120,7 @@ to extract feature vectors from the images. These features are then used for cla
 
 3. Evaluation Metrics :Accuracy and F1-Score (both Micro and Macro) are computed on the validation data to evaluate 	model performance.
 
-##Inference
+## Inference
 
 1. Once the model is trained, the following steps are used to generate predictions for the test dataset:
 	
